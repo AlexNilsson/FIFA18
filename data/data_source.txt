@@ -1,0 +1,6 @@
+This data is courtesy of the FIFA World Cup Archive website.
+
+but downloaded from:
+https://www.kaggle.com/abecklas/fifa-world-cup/version/5#
+
+thanks!
