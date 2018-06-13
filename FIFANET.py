@@ -112,15 +112,19 @@ class FIFANET():
           result_b = np.floor(x[1]).astype(int)
 
         if result_a == result_b:
-          delta = abs(x[0] - x[1])
+          delta = max(abs(x[0] - x[1]),0.1)
+          print(delta)
           if x[0] > x[1]:
-            x[0] += delta
-            x[1] -= delta
+            x[0] = x[0] + delta
+            x[1] = x[1] - delta
+            result_a = np.ceil(x[0]).astype(int)
+            result_b = np.floor(x[1]).astype(int)
           else:
-            x[0] -= delta
-            x[1] += delta
+            x[0] = x[0] - delta
+            x[1] = x[1] + delta
+            result_a = np.floor(x[0]).astype(int)
+            result_b = np.ceil(x[1]).astype(int)
 
-          result_a = np.round(x[0]).astype(int)
-          result_b = np.round(x[1]).astype(int)
+
 
       print(result_a, result_b)
